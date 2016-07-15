@@ -10,7 +10,17 @@ export default class Scrolload {
                     <div class="item">item ${item}</div>
                 `;
             },
+            onLoading: function() {
+                console.log('loading...');
+            },
+            onLoaded: function() {
+                console.log('loaded');
+            },
+            onNoMore: function() {
+                console.log('no more data');
+            },
         }, options);
+
         this.page = ops.page;
         this.count = ops.count;
         this.data = ops.data;
@@ -18,6 +28,11 @@ export default class Scrolload {
         this.$container = $(ops.container);
         this.tpl = ops.tpl;
         this.isLoading = false;
+
+        // hooks
+        this.onLoading = ops.onLoading;
+        this.onLoaded = ops.onLoaded;
+        this.onNoMore = ops.onNoMore;
 
         this.render().onScroll();
     }
@@ -58,14 +73,17 @@ export default class Scrolload {
             console.log(thresold);
             if(thresold < 20 && !this.isLoading) {
                 this.isLoading = true;
-                console.log('is loading ...');
+                // hooks
+                this.onLoading();
                 if(this.totalPage >= this.page) {
                     setTimeout(() => {
                         this.render();
-                        console.log('loaded.');
+                        // hooks
+                        this.onLoaded();
                     }, 500);
                 } else {
-                    console.log('no more data.');
+                    // hooks
+                    this.onNoMore();
                 }
             }
         });

@@ -37,8 +37,18 @@
               count: 10,
               tpl: function tpl(item) {
                   return '\n                    <div class="item">item ' + item + '</div>\n                ';
+              },
+              onLoading: function onLoading() {
+                  console.log('loading...');
+              },
+              onLoaded: function onLoaded() {
+                  console.log('loaded');
+              },
+              onNoMore: function onNoMore() {
+                  console.log('no more data');
               }
           }, options);
+
           this.page = ops.page;
           this.count = ops.count;
           this.data = ops.data;
@@ -46,6 +56,11 @@
           this.$container = $(ops.container);
           this.tpl = ops.tpl;
           this.isLoading = false;
+
+          // hooks
+          this.onLoading = ops.onLoading;
+          this.onLoaded = ops.onLoaded;
+          this.onNoMore = ops.onNoMore;
 
           this.render().onScroll();
       }
@@ -99,14 +114,17 @@
                   console.log(thresold);
                   if (thresold < 20 && !_this2.isLoading) {
                       _this2.isLoading = true;
-                      console.log('is loading ...');
+                      // hooks
+                      _this2.onLoading();
                       if (_this2.totalPage >= _this2.page) {
                           setTimeout(function () {
                               _this2.render();
-                              console.log('loaded.');
+                              // hooks
+                              _this2.onLoaded();
                           }, 500);
                       } else {
-                          console.log('no more data.');
+                          // hooks
+                          _this2.onNoMore();
                       }
                   }
               });
