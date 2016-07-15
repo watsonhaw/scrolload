@@ -1,6 +1,6 @@
 {
   "name": "scrolload",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Scroll-to-load plugin for jquery and zepto.",
   "main": "src/index.js",
   "scripts": {
@@ -40,8 +40,5 @@
     "rollup-plugin-sourcemaps": "^0.3.4",
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-watch": "^2.4.0"
-  },
-  "dependencies": {
-    "zepto": "^1.2.0"
   }
 }
