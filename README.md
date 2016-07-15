@@ -36,6 +36,15 @@ $ bower install scrolload
                         <div class="item">item ${item}</div>
                     `;
                 },
+                onLoading: function() {
+                    $('.scrolload').append('<p class="loading">Loading...</p>');
+                },
+                onLoaded: function() {
+                    $('.loading').remove();
+                },
+                onNoMore: function() {
+                    $('.loading').text('No more data.');
+                },
             });
         });
     </script>
