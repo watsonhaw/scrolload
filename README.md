@@ -2,6 +2,14 @@
 [![dependencies](https://david-dm.org/justclear/scrolload.svg)](https://david-dm.org/justclear/scrolload#info=dependencies&view=table)
 [![devDependencies](https://david-dm.org/justclear/scrolload/dev-status.svg)](https://david-dm.org/justclear/scrolload#info=devDependencies&view=table)
 
+## Install
+
+```javascript
+$ npm install scrolload --save
+// or
+$ bower install scrolload
+```
+
 ## Usage
 ```html
 <!DOCTYPE html>
@@ -35,5 +43,4 @@
     </script>
 </body>
 </html>
-```
 ```
