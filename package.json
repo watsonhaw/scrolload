@@ -1,0 +1,47 @@
+{
+  "name": "scrolload",
+  "version": "1.0.0",
+  "description": "Scroll-to-load plugin for jquery and zepto.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rm -rf dist && npm run roll:dev",
+    "publish": "rm -rf dist && npm run roll:dev && npm run roll:prod",
+    "roll:watch": "rollup -w -c rollup.config.dev.js",
+    "roll:dev": "rollup -c rollup.config.dev.js",
+    "roll:prod": "rollup -c rollup.config.prod.js",
+    "lint": "eslint src",
+    "flow": "flow status"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JustClear/scrolload.git"
+  },
+  "keywords": [
+    "scrolload",
+    "load",
+    "scroll"
+  ],
+  "author": "JustClear",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustClear/scrolload/issues"
+  },
+  "homepage": "https://github.com/JustClear/scrolload",
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "babel-plugin-syntax-flow": "^6.8.0",
+    "babel-plugin-transform-class-properties": "^6.10.2",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "eslint": "^2.13.1",
+    "rollup": "^0.33.0",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-json": "^2.0.1",
+    "rollup-plugin-sourcemaps": "^0.3.4",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^2.4.0"
+  },
+  "dependencies": {
+    "zepto": "^1.2.0"
+  }
+}

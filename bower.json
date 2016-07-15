@@ -1,0 +1,27 @@
+{
+  "name": "scrolload",
+  "description": "Scroll-to-load plugin for jquery and zepto.",
+  "main": "src/index.js",
+  "authors": [
+    "JustClear"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "scrolload",
+    "scroll",
+    "load"
+  ],
+  "homepage": "https://github.com/JustClear/scrolload",
+  "ignore": [
+    "**/.*",
+    ".*",
+    "rollup.*.js",
+    "*.json",
+    "*.md",
+    "*.yml",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
