@@ -1,6 +1,6 @@
 {
   "name": "scrolload",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Scroll-to-load plugin for jquery and zepto.",
   "main": "dist/scrolload.js",
   "scripts": {
