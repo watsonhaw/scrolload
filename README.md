@@ -26,7 +26,7 @@ $ bower install scrolload
     <script>
         fetch('https://api.example.com/items')
         .then(response => response.json())
-        .then(item => {
+        .then(items => {
             new Scrolload({
                 container: '.scrolload', // $('.scrolload')
                 count: 9, // per page
