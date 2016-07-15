@@ -5,12 +5,18 @@ export default class Scrolload {
         let ops = $.extend(true, {
             page: 1,
             count: 10,
+            tpl: function(item) {
+                return `
+                    <div class="item">item ${item}</div>
+                `;
+            },
         }, options);
         this.page = ops.page;
         this.count = ops.count;
         this.data = ops.data;
         this.totalPage = Math.ceil(this.data.length / this.count);
         this.$container = $(ops.container);
+        this.tpl = ops.tpl;
         this.isLoading = false;
 
         this.render().onScroll();
@@ -30,10 +36,9 @@ export default class Scrolload {
     template(data) {
         let tpl = '',
             htmls = [];
-        data.map(function(item) {
-            tpl = `
-                <div class="tepmlate">Template Item ${item}</div>
-            `;
+            console.log(this);
+        data.map((item) => {
+            tpl = this.tpl(item);
             htmls.push(tpl);
             tpl = ``;
         });
