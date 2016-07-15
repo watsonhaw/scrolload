@@ -24,21 +24,19 @@ $ bower install scrolload
     <!-- <script src="../node_modules/zepto/dist/zepto.min.js"></script> -->
     <script src="../dist/scrolload.js"></script>
     <script>
-        new Scrolload({
-            container: '.scrolload', // $('.scrolload')
-            count: 9, // per page
-            data: [
-                1,2,3,4,5,6,7,8,9,0,
-                1,2,3,4,5,6,7,8,9,0,
-                1,2,3,4,5,6,7,8,9,0,
-                1,2,3,4,5,6,7,8,9,0,
-                1,2,3,4,5,6,7,8,9,0,
-            ],
-            tpl: function(item) {
-                return `
-                    <div class="item">item ${item}</div>
-                `;
-            },
+        fetch('https://api.example.com/items')
+        .then(response => response.json())
+        .then(item => {
+            new Scrolload({
+                container: '.scrolload', // $('.scrolload')
+                count: 9, // per page
+                data: items,
+                tpl: function(item) {
+                    return `
+                        <div class="item">item ${item}</div>
+                    `;
+                },
+            });
         });
     </script>
 </body>
